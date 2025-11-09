@@ -2,7 +2,7 @@
 
 A Streamlit dashboard to analyze **pre-crisis vs crisis** performance for a food-delivery startup. It turns raw CSVs into stakeholder-ready KPIs, trends, and ranked impact lists, with exports and built-in explainers.
 
-![hero](docs/hero.png)
+
 
 ---
 
