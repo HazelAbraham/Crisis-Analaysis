@@ -68,23 +68,53 @@ This dashboard operationalizes the **Primary Analysis** questions (pre-crisis vs
 - One-click CSV exports for what you’re seeing
 
 ---
-
-## Repository structure
 streamlit_app_raw/
 ├─ app.py
 ├─ utils/
-│ ├─ init.py
-│ ├─ data_loader.py
-│ ├─ analysis.py
-│ └─ visualizations.py
+│  ├─ __init__.py
+│  ├─ data_loader.py
+│  ├─ analysis.py
+│  └─ visualizations.py
 ├─ data/
-│ ├─ fact_orders.csv
-│ ├─ fact_order_items.csv
-│ ├─ fact_delivery_performance.csv
-│ ├─ fact_ratings.csv
-│ ├─ dim_delivery_partner_.csv 
-│ ├─ dim_customer.csv
-│ ├─ dim_menu_item.csv
-│ └─ dim_restaurant.csv
-└─ .streamlit/
+│  ├─ fact_orders.csv
+│  ├─ fact_order_items.csv
+│  ├─ fact_delivery_performance.csv
+│  ├─ fact_ratings.csv
+│  ├─ dim_delivery_partner_.csv  
+│  ├─ dim_customer.csv
+│  ├─ dim_menu_item.csv
+│  └─ dim_restaurant.csv
+│  
+│           
+├─ .gitignore
+├─ requirements.txt
+├─ README.md
+└─ LICENSE
+
+
+
+
+
+------------------------------------------------------
+
+## Data requirements
+
+Place CSVs under `streamlit_app_raw/data`:
+
+- **Facts**
+  - `fact_orders.csv` → `order_id`, `customer_id`, `restaurant_id`, `order_timestamp`, `total_amount`, `is_cancelled`
+  - `fact_order_items.csv`
+  - `fact_delivery_performance.csv` → `order_id`, `expected_delivery_time_mins`, `actual_delivery_time_mins`
+  - `fact_ratings.csv` → `order_id`, `review_timestamp`, `rating`; optional `review_text`, `sentiment_score`
+- **Dimensions**
+  - `dim_customer.csv` → `customer_id`, `city`
+  - `dim_restaurant.csv` → `restaurant_id`, `restaurant_name`
+  - `dim_menu_item.csv`
+  - `dim_delivery_partner_.csv`
+
+Derived fields:
+- Orders: `order_year_month`, `order_month`, `period` (cutoff 2025-06-01). 
+- Ratings: `review_month`.
+
+
 
