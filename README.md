@@ -8,7 +8,7 @@ A Streamlit dashboard to analyze **pre-crisis vs crisis** performance for a food
 
 ## What problem does this solve?
 
-QuickBite Express faced a June 2025 crisis: a viral food-safety incident and a delivery outage led to sharp drops in orders, satisfaction, and partner retention. Leadership needs clear, actionable insight across customers, orders, delivery performance, ratings, and revenue to guide recovery actions. :contentReference[oaicite:0]{index=0}
+QuickBite Express faced a June 2025 crisis: a viral food-safety incident and a delivery outage led to sharp drops in orders, satisfaction, and partner retention. Leadership needs clear, actionable insight across customers, orders, delivery performance, ratings, and revenue to guide recovery actions. 
 
 This dashboard operationalizes the **Primary Analysis** questions (pre-crisis vs crisis) so teams can:
 - Quantify demand decline month-over-month.
@@ -80,16 +80,17 @@ streamlit_app_raw/
 │  ├─ fact_order_items.csv
 │  ├─ fact_delivery_performance.csv
 │  ├─ fact_ratings.csv
-│  ├─ dim_delivery_partner_.csv  
+│  ├─ dim_delivery_partner_.csv   # underscore is intentional
 │  ├─ dim_customer.csv
 │  ├─ dim_menu_item.csv
 │  └─ dim_restaurant.csv
-│  
-│           
+├─ .streamlit/
+│  └─ config.toml                 # optional theme
 ├─ .gitignore
 ├─ requirements.txt
 ├─ README.md
 └─ LICENSE
+
 
 
 
