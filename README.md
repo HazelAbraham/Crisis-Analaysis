@@ -68,6 +68,9 @@ This dashboard operationalizes the **Primary Analysis** questions (pre-crisis vs
 - One-click CSV exports for what you’re seeing
 
 ---
+## Repository Structure
+
+```text
 streamlit_app_raw/
 ├─ app.py
 ├─ utils/
@@ -84,12 +87,11 @@ streamlit_app_raw/
 │  ├─ dim_customer.csv
 │  ├─ dim_menu_item.csv
 │  └─ dim_restaurant.csv
-├─ .streamlit/
-│  └─ config.toml                 # optional theme
+
 ├─ .gitignore
 ├─ requirements.txt
-├─ README.md
-└─ LICENSE
+
+
 
 
 
